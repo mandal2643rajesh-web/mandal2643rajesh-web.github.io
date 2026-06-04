@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Rajesh Mandal — Finance & Accounts Executive</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#1A1F2E;
+  --ink-mid:#2E3547;
+  --ink-light:#5A6278;
+  --ink-faint:#8E95A6;
+  --gold:#8B6914;
+  --gold-light:#B8921E;
+  --gold-pale:#F9F4E8;
+  --rule:#D4C99A;
+  --white:#FFFFFF;
+  --off-white:#FAFAF7;
+  --surface:#F5F4F0;
+  --border:#E2DDD4;
+  --border-strong:#C8C0B0;
+  --font-serif:'Playfair Display',Georgia,serif;
+  --font-sans:'Inter',system-ui,sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-sans);background:var(--off-white);color:var(--ink);line-height:1.7;overflow-x:hidden}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 5rem;height:64px;
+  background:rgba(255,255,255,0.97);
+  border-bottom:1px solid var(--border);
+  backdrop-filter:blur(8px);
+}
+.nav-brand{display:flex;flex-direction:column;gap:1px}
+.nav-name{font-family:var(--font-serif);font-size:1.05rem;font-weight:600;color:var(--ink);letter-spacing:0.01em}
+.nav-role{font-size:0.68rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-faint)}
+.nav-links{display:flex;gap:2.2rem;list-style:none}
+.nav-links a{font-size:0.77rem;font-weight:500;letter-spacing:0.07em;text-transform:uppercase;color:var(--ink-light);text-decoration:none;transition:color 0.2s;padding-bottom:2px;border-bottom:1px solid transparent}
+.nav-links a:hover{color:var(--gold);border-bottom-color:var(--gold)}
+
+/* ── HERO ── */
+#hero{
+  min-height:100vh;
+  background:var(--ink);
+  display:flex;flex-direction:column;justify-content:center;
+  padding:9rem 5rem 5rem;
+  position:relative;overflow:hidden;
+}
+.hero-rule{
+  width:48px;height:2px;background:var(--rule);
+  margin-bottom:2rem;
+}
+.hero-eyebrow{
+  font-size:0.72rem;font-weight:600;letter-spacing:0.2em;
+  text-transform:uppercase;color:var(--rule);
+  margin-bottom:1.5rem;
+}
+.hero-name{
+  font-family:var(--font-serif);
+  font-size:clamp(3.5rem,7vw,6.5rem);
+  font-weight:700;line-height:1.0;
+  color:var(--white);
+  margin-bottom:1.5rem;
+  letter-spacing:-0.01em;
+}
+.hero-headline{
+  font-size:1.05rem;font-weight:300;
+  color:rgba(255,255,255,0.5);
+  max-width:580px;line-height:1.75;
+  margin-bottom:3.5rem;
+  border-left:2px solid var(--rule);
+  padding-left:1.25rem;
+}
+.hero-meta{
+  display:flex;align-items:center;gap:3rem;
+  flex-wrap:wrap;margin-bottom:3.5rem;
+}
+.meta-item{display:flex;flex-direction:column;gap:4px}
+.meta-val{font-family:var(--font-serif);font-size:2rem;font-weight:700;color:var(--white);line-height:1}
+.meta-key{font-size:0.68rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.3)}
+.meta-divider{width:1px;height:40px;background:rgba(255,255,255,0.1)}
+.hero-actions{display:flex;gap:0.75rem;flex-wrap:wrap}
+.btn-solid{
+  font-family:var(--font-sans);font-size:0.78rem;font-weight:600;
+  letter-spacing:0.1em;text-transform:uppercase;
+  background:var(--white);color:var(--ink);
+  border:none;padding:0.85rem 2rem;
+  cursor:pointer;text-decoration:none;display:inline-block;
+  transition:background 0.2s,transform 0.15s;
+}
+.btn-solid:hover{background:#F0EEE8;transform:translateY(-1px)}
+.btn-ghost{
+  font-family:var(--font-sans);font-size:0.78rem;font-weight:500;
+  letter-spacing:0.1em;text-transform:uppercase;
+  background:transparent;color:rgba(255,255,255,0.6);
+  border:1px solid rgba(255,255,255,0.2);padding:0.85rem 2rem;
+  cursor:pointer;text-decoration:none;display:inline-block;
+  transition:border-color 0.2s,color 0.2s;
+}
+.btn-ghost:hover{border-color:var(--rule);color:var(--rule)}
+.hero-contact-strip{
+  position:absolute;bottom:0;left:0;right:0;
+  display:flex;border-top:1px solid rgba(255,255,255,0.07);
+}
+.strip-item{
+  flex:1;display:flex;align-items:center;gap:0.75rem;
+  padding:1.1rem 5rem;
+  font-size:0.8rem;color:rgba(255,255,255,0.4);
+  border-right:1px solid rgba(255,255,255,0.07);
+  text-decoration:none;transition:color 0.2s,background 0.2s;
+}
+.strip-item:last-child{border-right:none}
+.strip-item:hover{color:var(--rule);background:rgba(255,255,255,0.03)}
+.strip-icon{font-size:0.9rem;flex-shrink:0}
+
+/* ── SECTION COMMON ── */
+section{padding:5.5rem 5rem}
+.sec-header{margin-bottom:3.5rem}
+.sec-eyebrow{
+  font-size:0.68rem;font-weight:600;letter-spacing:0.2em;
+  text-transform:uppercase;color:var(--gold);
+  display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;
+}
+.sec-eyebrow::after{content:'';flex:1;height:1px;background:var(--border);max-width:48px}
+.sec-title{
+  font-family:var(--font-serif);
+  font-size:clamp(1.8rem,3.5vw,2.6rem);
+  font-weight:700;color:var(--ink);line-height:1.2;
+}
+.sec-title em{font-style:normal;color:var(--gold)}
+
+/* ── ABOUT ── */
+#about{background:var(--white)}
+.about-layout{display:grid;grid-template-columns:1fr 360px;gap:6rem;align-items:start}
+.about-text p{font-size:0.97rem;color:var(--ink-mid);line-height:1.9;margin-bottom:1.1rem}
+.about-text p:last-child{margin-bottom:0}
+.about-sidebar{display:flex;flex-direction:column;gap:0}
+.sidebar-block{padding:1.25rem 0;border-bottom:1px solid var(--border)}
+.sidebar-block:first-child{padding-top:0}
+.sidebar-block:last-child{border-bottom:none;padding-bottom:0}
+.sidebar-label{
+  font-size:0.65rem;font-weight:700;letter-spacing:0.16em;
+  text-transform:uppercase;color:var(--ink-faint);margin-bottom:0.5rem;
+}
+.sidebar-val{font-size:0.88rem;font-weight:500;color:var(--ink);line-height:1.5}
+.sidebar-val small{display:block;font-weight:400;color:var(--ink-light);font-size:0.8rem;margin-top:2px}
+
+/* ── EXPERIENCE ── */
+#experience{background:var(--off-white)}
+.exp-list{display:flex;flex-direction:column;gap:0}
+.exp-card{
+  display:grid;grid-template-columns:200px 1fr;
+  gap:0 3rem;padding:2.5rem 0;
+  border-bottom:1px solid var(--border);
+}
+.exp-card:first-child{border-top:1px solid var(--border)}
+.exp-left{padding-top:0.15rem}
+.exp-period-tag{
+  font-size:0.7rem;font-weight:600;letter-spacing:0.1em;
+  text-transform:uppercase;color:var(--gold);
+  background:var(--gold-pale);
+  padding:0.3rem 0.65rem;display:inline-block;
+  margin-bottom:0.75rem;
+}
+.exp-co-name{font-size:0.82rem;font-weight:600;color:var(--ink-mid);line-height:1.4}
+.exp-sector{font-size:0.75rem;color:var(--ink-faint);margin-top:2px}
+.exp-right{}
+.exp-role-title{
+  font-family:var(--font-serif);
+  font-size:1.2rem;font-weight:700;color:var(--ink);
+  margin-bottom:1.1rem;
+}
+.exp-points{list-style:none;display:flex;flex-direction:column;gap:0.55rem}
+.exp-points li{
+  font-size:0.88rem;color:var(--ink-light);line-height:1.7;
+  padding-left:1.1rem;position:relative;
+}
+.exp-points li::before{
+  content:'';position:absolute;left:0;top:0.6em;
+  width:4px;height:4px;background:var(--border-strong);border-radius:50%;
+}
+
+/* ── SKILLS ── */
+#skills{background:var(--white)}
+.skills-layout{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--border)}
+.skill-block{padding:2rem 1.75rem;border-right:1px solid var(--border);border-bottom:1px solid var(--border)}
+.skill-block:nth-child(3n){border-right:none}
+.skill-block:nth-child(n+4){border-bottom:none}
+.skill-block-label{
+  font-size:0.65rem;font-weight:700;letter-spacing:0.16em;
+  text-transform:uppercase;color:var(--ink-faint);
+  margin-bottom:1rem;padding-bottom:0.75rem;
+  border-bottom:1px solid var(--border);
+}
+.skill-list{display:flex;flex-wrap:wrap;gap:0.4rem}
+.skill-pill{
+  font-size:0.77rem;font-weight:400;color:var(--ink-mid);
+  background:var(--surface);border:1px solid var(--border);
+  padding:0.25rem 0.65rem;
+}
+
+/* ── ACHIEVEMENTS ── */
+#projects{background:var(--off-white)}
+.ach-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.ach-card{
+  background:var(--white);border:1px solid var(--border);
+  padding:2rem 1.75rem;
+  position:relative;
+  transition:border-color 0.2s,box-shadow 0.2s;
+}
+.ach-card:hover{border-color:var(--border-strong);box-shadow:0 4px 20px rgba(26,31,46,0.06)}
+.ach-index{
+  font-family:var(--font-serif);
+  font-size:0.75rem;font-weight:600;color:var(--ink-faint);
+  letter-spacing:0.1em;margin-bottom:1rem;
+}
+.ach-title{
+  font-family:var(--font-serif);
+  font-size:1.05rem;font-weight:700;color:var(--ink);
+  margin-bottom:0.65rem;line-height:1.35;
+}
+.ach-body{font-size:0.85rem;color:var(--ink-light);line-height:1.75;margin-bottom:1.25rem}
+.ach-kpi{
+  display:inline-flex;align-items:center;gap:0.5rem;
+  font-size:0.7rem;font-weight:700;letter-spacing:0.12em;
+  text-transform:uppercase;color:var(--gold);
+  background:var(--gold-pale);
+  padding:0.35rem 0.75rem;
+  border-left:2px solid var(--gold);
+}
+
+/* ── EDUCATION ── */
+#education{background:var(--white)}
+.edu-table{width:100%;border-collapse:collapse;margin-top:0.5rem}
+.edu-table th{
+  font-size:0.65rem;font-weight:700;letter-spacing:0.16em;
+  text-transform:uppercase;color:var(--ink-faint);
+  text-align:left;padding:0 1.5rem 1rem 0;
+  border-bottom:1px solid var(--border-strong);
+}
+.edu-table td{
+  font-size:0.88rem;color:var(--ink-mid);
+  padding:1.1rem 1.5rem 1.1rem 0;
+  border-bottom:1px solid var(--border);
+  vertical-align:top;
+}
+.edu-table tr:last-child td{border-bottom:none}
+.edu-deg{font-weight:600;color:var(--ink);font-size:0.92rem}
+.badge{
+  display:inline-block;font-size:0.65rem;font-weight:600;
+  letter-spacing:0.09em;text-transform:uppercase;
+  padding:0.2rem 0.55rem;
+}
+.badge-done{background:#EBF5EB;color:#1F6B2E}
+.badge-prog{background:var(--gold-pale);color:var(--gold)}
+
+/* ── CONTACT ── */
+#contact{background:var(--ink)}
+#contact .sec-title{color:var(--white)}
+#contact .sec-eyebrow{color:var(--rule)}
+#contact .sec-eyebrow::after{background:rgba(255,255,255,0.15)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start}
+.contact-desc{font-size:0.97rem;color:rgba(255,255,255,0.45);line-height:1.85;margin-top:1.5rem}
+.contact-details{display:flex;flex-direction:column;gap:0}
+.cdet-row{
+  display:flex;align-items:flex-start;gap:1.25rem;
+  padding:1.25rem 0;border-bottom:1px solid rgba(255,255,255,0.07);
+  text-decoration:none;color:inherit;
+  transition:color 0.2s;
+}
+.cdet-row:last-child{border-bottom:none}
+.cdet-row:hover .cdet-val{color:var(--rule)}
+.cdet-icon{font-size:1rem;color:rgba(255,255,255,0.25);padding-top:2px;flex-shrink:0}
+.cdet-group{display:flex;flex-direction:column;gap:2px}
+.cdet-key{font-size:0.65rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.25)}
+.cdet-val{font-size:0.9rem;font-weight:400;color:rgba(255,255,255,0.7);transition:color 0.2s}
+
+footer{
+  background:#111620;
+  text-align:center;padding:1.25rem 5rem;
+  display:flex;justify-content:space-between;align-items:center;
+  border-top:1px solid rgba(255,255,255,0.05);
+}
+.footer-name{font-family:var(--font-serif);font-size:0.85rem;font-weight:600;color:rgba(255,255,255,0.3)}
+.footer-copy{font-size:0.72rem;color:rgba(255,255,255,0.2);letter-spacing:0.06em}
+
+@media(max-width:900px){
+  nav{padding:0 1.5rem}
+  #hero{padding:7rem 1.5rem 5rem}
+  .hero-contact-strip .strip-item{padding:1rem 1.5rem}
+  section{padding:4rem 1.5rem}
+  .about-layout{grid-template-columns:1fr;gap:2.5rem}
+  .exp-card{grid-template-columns:1fr;gap:0.75rem}
+  .skills-layout{grid-template-columns:1fr 1fr}
+  .skill-block:nth-child(3n){border-right:1px solid var(--border)}
+  .skill-block:nth-child(2n){border-right:none}
+  .skill-block:nth-child(n+5){border-bottom:none}
+  .ach-grid{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr;gap:2.5rem}
+  footer{flex-direction:column;gap:0.5rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">
+    <span class="nav-name">Rajesh Mandal</span>
+    <span class="nav-role">Finance &amp; Accounts Executive</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#about">Profile</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Achievements</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-rule"></div>
+  <p class="hero-eyebrow">Finance &amp; Accounts Executive &nbsp;·&nbsp; AP · AR · Treasury · O2C · P2P · R2R</p>
+  <h1 class="hero-name">Rajesh<br/>Mandal</h1>
+  <p class="hero-headline">
+    A results-driven Finance &amp; Accounts Professional with over 5 years of experience delivering financial precision, statutory compliance, and process automation across Fintech, Gaming, E-commerce, and Manufacturing sectors.
+  </p>
+  <div class="hero-meta">
+    <div class="meta-item">
+      <span class="meta-val">5+</span>
+      <span class="meta-key">Years of Experience</span>
+    </div>
+    <div class="meta-divider"></div>
+    <div class="meta-item">
+      <span class="meta-val">4</span>
+      <span class="meta-key">Organisations</span>
+    </div>
+    <div class="meta-divider"></div>
+    <div class="meta-item">
+      <span class="meta-val">95%</span>
+      <span class="meta-key">Manual Effort Reduced</span>
+    </div>
+    <div class="meta-divider"></div>
+    <div class="meta-item">
+      <span class="meta-val">10K+</span>
+      <span class="meta-key">Transactions / Cycle</span>
+    </div>
+  </div>
+  <div class="hero-actions">
+    <a href="#experience" class="btn-solid">View Experience</a>
+    <a href="#contact" class="btn-ghost">Contact Me</a>
+  </div>
+
+  <div class="hero-contact-strip">
+    <a class="strip-item" href="tel:+918447456534">
+      <span class="strip-icon">✆</span> +91 8447 456 534
+    </a>
+    <a class="strip-item" href="mailto:mandal2643rajesh@gmail.com">
+      <span class="strip-icon">✉</span> mandal2643rajesh@gmail.com
+    </a>
+    <div class="strip-item">
+      <span class="strip-icon">⌖</span> Delhi NCR, India
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="sec-header">
+    <div class="sec-eyebrow">Professional Profile</div>
+    <h2 class="sec-title">Summary</h2>
+  </div>
+  <div class="about-layout">
+    <div class="about-text">
+      <p>Finance &amp; Accounts Professional with more than five years of hands-on experience spanning Fintech, Gaming, E-commerce, and Manufacturing industries. My core expertise covers end-to-end Accounts Payable (AP), Accounts Receivable (AR), Procure-to-Pay (P2P), and Treasury operations, complemented by deep competency in GST, TDS, and cross-border statutory compliance.</p>
+      <p>I have consistently operated in high-volume transaction environments — reconciling 10,000+ payment gateway line items per cycle, processing 200+ vendor invoices monthly at 99% accuracy, and managing multi-currency treasury accounts across AED, USD, SAR, CAD, EUR, and INR. My work spans both domestic and international financial operations with exposure to SOX control frameworks.</p>
+      <p>What differentiates my professional profile is a strong focus on process automation. I have designed and deployed Power Query frameworks and Python tools that have reduced manual reconciliation effort by up to 95%, significantly improving audit readiness and month-end close efficiency. I am proficient in Oracle NetSuite, Coupa, SAP S/4HANA, Tally ERP, Advanced Excel, Power BI, and AI-assisted validation workflows.</p>
+    </div>
+    <div class="about-sidebar">
+      <div class="sidebar-block">
+        <div class="sidebar-label">Current Location</div>
+        <div class="sidebar-val">Delhi NCR, India</div>
+      </div>
+      <div class="sidebar-block">
+        <div class="sidebar-label">Domain Expertise</div>
+        <div class="sidebar-val">
+          AP · AR · Treasury · P2P · O2C · R2R
+          <small>GST · TDS · SOX · VAT Compliance</small>
+        </div>
+      </div>
+      <div class="sidebar-block">
+        <div class="sidebar-label">ERP Platforms</div>
+        <div class="sidebar-val">Oracle NetSuite · Coupa · SAP S/4HANA<small>Tally ERP · Zoho · Busy</small></div>
+      </div>
+      <div class="sidebar-block">
+        <div class="sidebar-label">Industries</div>
+        <div class="sidebar-val">Fintech · Gaming · E-commerce<small>Manufacturing</small></div>
+      </div>
+      <div class="sidebar-block">
+        <div class="sidebar-label">Availability</div>
+        <div class="sidebar-val">Open to New Opportunities<small>Full-time · Delhi NCR &amp; Remote</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="sec-header">
+    <div class="sec-eyebrow">Career History</div>
+    <h2 class="sec-title">Professional <em>Experience</em></h2>
+  </div>
+  <div class="exp-list">
+
+    <div class="exp-card">
+      <div class="exp-left">
+        <div class="exp-period-tag">Jan 2026 – Apr 2026</div>
+        <div class="exp-co-name">Clearwater Analytics India Pvt. Ltd.</div>
+        <div class="exp-sector">Financial Technology</div>
+      </div>
+      <div class="exp-right">
+        <div class="exp-role-title">Accounts Payable Specialist</div>
+        <ul class="exp-points">
+          <li>Managed end-to-end Accounts Payable operations, processing 200+ vendor invoices monthly in Coupa with 99% accuracy and zero payment holds via seamless NetSuite ERP synchronisation.</li>
+          <li>Executed 2-Way Matching and invoice processing validations to enforce SOX control frameworks, procurement policy compliance, and applicable tax regulations.</li>
+          <li>Processed high-volume multi-modal batch payments via NEFT, RTGS, ACH, SEPA, and Wire Transfer across domestic and cross-border transactions, adhering to regulatory payment schedules.</li>
+          <li>Managed Vendor Master Management in NetSuite; maintained accuracy of vendor records, payment terms, and banking details for seamless payment execution.</li>
+          <li>Handled GST &amp; TDS compliance including preparation of workings for consultants, maintenance of Lower Deduction Certificates (LDC), and issuance of Form 16A under the Income Tax Act.</li>
+          <li>Leveraged Advanced Excel and Power Query automation to streamline AP data reconciliation and ERP upload processes, reducing manual effort by 95%.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-card">
+      <div class="exp-left">
+        <div class="exp-period-tag">Mar 2025 – Sep 2025</div>
+        <div class="exp-co-name">Baazi Games Pvt. Ltd.</div>
+        <div class="exp-sector">Online Gaming / Fintech</div>
+      </div>
+      <div class="exp-right">
+        <div class="exp-role-title">Accounts Executive</div>
+        <ul class="exp-points">
+          <li>Managed Accounts Payable and Receivable operations in a high-volume transaction environment; oversaw end-to-end revenue reconciliation and settlement across multiple payment channels.</li>
+          <li>Executed daily and monthly gateway reconciliation across 7+ channels — Razorpay, Cashfree, PayU, PhonePe, Paytm, Easebuzz, and Pine Labs — processing 10,000+ transaction line items per cycle with near-zero error rate.</li>
+          <li>Performed 2-Way Matching and weekly gateway commercial validations to ensure billing accuracy and contractual compliance; managed intercompany reconciliation across group entities.</li>
+          <li>Prepared GSTR-1 and GSTR-3B reconciliation workings, TDS computations, and coordinated with Chartered Accountants for statutory return filing.</li>
+          <li>Developed and maintained MIS reporting dashboards covering gateway-wise balances, deposit/withdrawal trends, and monthly financial performance for senior management review.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-card">
+      <div class="exp-left">
+        <div class="exp-period-tag">Aug 2024 – Feb 2025</div>
+        <div class="exp-co-name">The Luxury Closet India Pvt. Ltd.</div>
+        <div class="exp-sector">Luxury E-commerce</div>
+      </div>
+      <div class="exp-right">
+        <div class="exp-role-title">Finance Executive — Collection &amp; Treasury</div>
+        <ul class="exp-points">
+          <li>Led end-to-end bank reconciliation for multi-currency treasury accounts across AED, USD, SAR, CAD, EUR, and INR, ensuring completeness and integrity of financial records.</li>
+          <li>Managed Accounts Receivable collections and seller vendor reconciliation; executed bulk payment processing including transaction verification, re-verification, and Proof of Payment (POP) distribution.</li>
+          <li>Assisted VAT compliance workings and supported external consultants in return preparation across multiple tax jurisdictions.</li>
+          <li>Produced month-end MIS reporting on treasury positions, seller balances, and gateway performance metrics for CFO office review.</li>
+          <li>Maintained Vendor Master Management for seller accounts, ensuring accuracy of payment details, compliance documentation, and audit readiness.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-card">
+      <div class="exp-left">
+        <div class="exp-period-tag">Jan 2021 – May 2024</div>
+        <div class="exp-co-name">Rajshree Biowares Pvt. Ltd.</div>
+        <div class="exp-sector">Manufacturing / B2B & B2C</div>
+      </div>
+      <div class="exp-right">
+        <div class="exp-role-title">Accounts Executive</div>
+        <ul class="exp-points">
+          <li>Managed end-to-end AP, AR, and General Ledger (GL) activities across B2B and B2C channels, maintaining data accuracy and financial statement integrity across all accounting cycles.</li>
+          <li>Executed the full Procure-to-Pay (P2P) cycle including PO creation, 2-Way &amp; 3-Way Matching, and payment processing via NEFT, RTGS, and Cheque in compliance with internal controls.</li>
+          <li>Performed vendor reconciliation, creditor ageing management, daily bank reconciliation, and AR ageing monitoring to support effective working capital management.</li>
+          <li>Prepared accruals &amp; provisions and account reclassification journal entries during Month-End Close, ensuring accurate expense recognition and GL integrity.</li>
+          <li>Handled GST &amp; TDS compliance; generated e-invoices, e-way bills, and B2B/B2C credit notes; supported Trial Balance, P&amp;L, and Balance Sheet preparation and audit readiness.</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="sec-header">
+    <div class="sec-eyebrow">Technical Competencies</div>
+    <h2 class="sec-title">Core <em>Skills</em></h2>
+  </div>
+  <div class="skills-layout">
+    <div class="skill-block">
+      <div class="skill-block-label">ERP &amp; Accounting Systems</div>
+      <div class="skill-list">
+        <span class="skill-pill">Oracle NetSuite</span>
+        <span class="skill-pill">SAP S/4HANA</span>
+        <span class="skill-pill">Coupa Procurement</span>
+        <span class="skill-pill">Tally ERP / Prime</span>
+        <span class="skill-pill">Zoho Books</span>
+        <span class="skill-pill">Busy Accounting</span>
+      </div>
+    </div>
+    <div class="skill-block">
+      <div class="skill-block-label">Finance Operations</div>
+      <div class="skill-list">
+        <span class="skill-pill">Accounts Payable</span>
+        <span class="skill-pill">Accounts Receivable</span>
+        <span class="skill-pill">Procure-to-Pay (P2P)</span>
+        <span class="skill-pill">Order-to-Cash (O2C)</span>
+        <span class="skill-pill">Record-to-Report (R2R)</span>
+        <span class="skill-pill">Month-End Close</span>
+      </div>
+    </div>
+    <div class="skill-block">
+      <div class="skill-block-label">Compliance &amp; Taxation</div>
+      <div class="skill-list">
+        <span class="skill-pill">GST / GSTR-1 / GSTR-3B</span>
+        <span class="skill-pill">TDS / Form 16A</span>
+        <span class="skill-pill">VAT Compliance</span>
+        <span class="skill-pill">SOX Controls</span>
+        <span class="skill-pill">Lower Deduction Cert.</span>
+        <span class="skill-pill">e-Invoice / e-Way Bill</span>
+      </div>
+    </div>
+    <div class="skill-block">
+      <div class="skill-block-label">Automation &amp; Business Intelligence</div>
+      <div class="skill-list">
+        <span class="skill-pill">Python</span>
+        <span class="skill-pill">Power Query</span>
+        <span class="skill-pill">Power BI</span>
+        <span class="skill-pill">Advanced Excel</span>
+        <span class="skill-pill">SQL</span>
+        <span class="skill-pill">AI Integration / ERP</span>
+        <span class="skill-pill">MIS Reporting</span>
+      </div>
+    </div>
+    <div class="skill-block">
+      <div class="skill-block-label">Payments &amp; Gateways</div>
+      <div class="skill-list">
+        <span class="skill-pill">NEFT / RTGS / IMPS</span>
+        <span class="skill-pill">ACH / SEPA / Wire</span>
+        <span class="skill-pill">Razorpay</span>
+        <span class="skill-pill">PayU / Cashfree</span>
+        <span class="skill-pill">PhonePe / Paytm</span>
+        <span class="skill-pill">Pine Labs</span>
+      </div>
+    </div>
+    <div class="skill-block">
+      <div class="skill-block-label">Treasury &amp; Reconciliation</div>
+      <div class="skill-list">
+        <span class="skill-pill">Multi-currency Treasury</span>
+        <span class="skill-pill">Bank Reconciliation</span>
+        <span class="skill-pill">Vendor Reconciliation</span>
+        <span class="skill-pill">Intercompany Recon.</span>
+        <span class="skill-pill">Accruals &amp; Provisions</span>
+        <span class="skill-pill">Vendor Master Mgmt</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section id="projects">
+  <div class="sec-header">
+    <div class="sec-eyebrow">Impact &amp; Initiatives</div>
+    <h2 class="sec-title">Key <em>Achievements</em></h2>
+  </div>
+  <div class="ach-grid">
+    <div class="ach-card">
+      <div class="ach-index">Initiative 01</div>
+      <div class="ach-title">Power Query ERP Upload Automation</div>
+      <p class="ach-body">Developed reusable Power Query automation templates for high-volume data uploads across Oracle NetSuite, Tally ERP, and Busy — converting multi-step manual processes into single-click operations and significantly improving throughput and data accuracy across finance teams.</p>
+      <span class="ach-kpi">↓ 95% Manual Processing Effort</span>
+    </div>
+    <div class="ach-card">
+      <div class="ach-index">Initiative 02</div>
+      <div class="ach-title">Payment Gateway Reconciliation Framework</div>
+      <p class="ach-body">Implemented Power Query-based reconciliation automation across 7+ payment gateways handling 10,000+ monthly transaction line items. The framework strengthened financial controls, reduced discrepancy rates, and improved reporting accuracy for treasury and finance leadership.</p>
+      <span class="ach-kpi">↓ 90% Reconciliation Discrepancies</span>
+    </div>
+    <div class="ach-card">
+      <div class="ach-index">Initiative 03</div>
+      <div class="ach-title">Python One-Click File Automation Tool</div>
+      <p class="ach-body">Built a Python-based automation tool to execute bulk file downloading, folder-wise classification, and cloud drive synchronisation — eliminating hours of daily manual operational effort and enabling the finance team to redirect time toward higher-value analytical work.</p>
+      <span class="ach-kpi">Hours of Daily Manual Work Eliminated</span>
+    </div>
+    <div class="ach-card">
+      <div class="ach-index">Initiative 04</div>
+      <div class="ach-title">AI-Assisted Real-Time Validation System</div>
+      <p class="ach-body">Implemented AI-assisted automated validation frameworks using Python and Power Query to detect and flag reconciliation discrepancies in real time — driving measurable improvements in data integrity, accelerating month-end close timelines, and enhancing audit readiness.</p>
+      <span class="ach-kpi">Real-Time Audit Readiness Achieved</span>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="sec-header">
+    <div class="sec-eyebrow">Academic Credentials</div>
+    <h2 class="sec-title">Education</h2>
+  </div>
+  <table class="edu-table">
+    <thead>
+      <tr>
+        <th style="width:30%">Qualification</th>
+        <th style="width:25%">Specialisation</th>
+        <th style="width:28%">Institution</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="edu-deg">Master of Commerce (M.Com)</span></td>
+        <td>Finance &amp; Accounts</td>
+        <td>IGNOU</td>
+        <td><span class="badge badge-prog">In Progress — Dec 2027</span></td>
+      </tr>
+      <tr>
+        <td><span class="edu-deg">Bachelor of Commerce (B.Com)</span></td>
+        <td>B.Com Programme</td>
+        <td>University of Delhi</td>
+        <td><span class="badge badge-done">Completed</span></td>
+      </tr>
+      <tr>
+        <td><span class="edu-deg">Class XII — Senior Secondary</span></td>
+        <td>Commerce Stream</td>
+        <td>CBSE Board</td>
+        <td><span class="badge badge-done">Completed</span></td>
+      </tr>
+      <tr>
+        <td><span class="edu-deg">Class X — Secondary</span></td>
+        <td>—</td>
+        <td>CBSE Board</td>
+        <td><span class="badge badge-done">Completed</span></td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="sec-header">
+    <div class="sec-eyebrow">Get in Touch</div>
+    <h2 class="sec-title">Contact</h2>
+  </div>
+  <div class="contact-grid">
+    <div>
+      <p class="contact-desc">I am actively exploring new opportunities in Finance &amp; Accounts — specialising in AP, AR, Treasury, Reconciliation, Compliance, and Finance Automation. Available for full-time roles in Delhi NCR and open to remote arrangements.</p>
+    </div>
+    <div class="contact-details">
+      <a class="cdet-row" href="tel:+918447456534">
+        <span class="cdet-icon">✆</span>
+        <div class="cdet-group">
+          <span class="cdet-key">Phone</span>
+          <span class="cdet-val">+91 8447 456 534</span>
+        </div>
+      </a>
+      <a class="cdet-row" href="mailto:mandal2643rajesh@gmail.com">
+        <span class="cdet-icon">✉</span>
+        <div class="cdet-group">
+          <span class="cdet-key">Email</span>
+          <span class="cdet-val">mandal2643rajesh@gmail.com</span>
+        </div>
+      </a>
+      <div class="cdet-row">
+        <span class="cdet-icon">⌖</span>
+        <div class="cdet-group">
+          <span class="cdet-key">Location</span>
+          <span class="cdet-val">Delhi NCR, India</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="footer-name">Rajesh Mandal</span>
+  <span class="footer-copy">© 2026 &nbsp;·&nbsp; Finance &amp; Accounts Executive &nbsp;·&nbsp; Delhi NCR</span>
+</footer>
+
+</body>
+</html>
